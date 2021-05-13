@@ -7,11 +7,11 @@ FROM openjdk:8-jdk-alpine
 
 #Maven Install
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
+#copy pom
+COPY pom.xml .
 
-RUN echo "$PWD"
-
-WORKDIR /app
-COPY --from=clone /app/dockerhub/docker-spring-boot/ /app
+#copy source
+COPY src ./src
 
 RUN mvn clean package
 
