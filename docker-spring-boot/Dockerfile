@@ -5,6 +5,10 @@
 #FROM adoptopenjdk/openjdk11:alpine-jre
 FROM openjdk:8-jdk-alpine
 
+FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
+
+RUN mvn clean package
+
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/spring-boot-web.jar
 
