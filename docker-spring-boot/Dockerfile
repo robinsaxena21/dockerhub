@@ -8,6 +8,9 @@ FROM openjdk:8-jdk-alpine
 #Maven Install
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
 
+WORKDIR /app
+COPY --from=clone /app/docker-spring-boot/dockerhub/ /app
+
 RUN mvn clean package
 
 # Refer to Maven build -> finalName
