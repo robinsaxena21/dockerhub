@@ -6,17 +6,6 @@
 #FROM openjdk:8-jdk-alpine
 FROM openjdk:11.0-jre
 
-
-#Maven Install
-FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
-#copy pom
-COPY pom.xml .
-
-#copy source
-COPY src ./src
-
-RUN mvn clean package
-
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/spring-boot-web.jar
 
