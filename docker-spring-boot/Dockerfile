@@ -6,6 +6,7 @@
 #FROM openjdk:8-jdk-alpine
 FROM openjdk:11.0-jre
 
+
 #Maven Install
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
 #copy pom
