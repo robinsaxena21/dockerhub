@@ -9,7 +9,7 @@ FROM openjdk:8-jdk-alpine
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
 
 WORKDIR /app
-COPY --from=clone /app/docker-spring-boot/dockerhub/ /app
+COPY --from=clone /app/dockerhub/docker-spring-boot/ /app
 
 RUN mvn clean package
 
