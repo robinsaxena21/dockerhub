@@ -16,7 +16,6 @@ public class StartApplication {
         model.addAttribute("msg", "Welcome to the docker container!");
         return "index";
     }
-
     
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
