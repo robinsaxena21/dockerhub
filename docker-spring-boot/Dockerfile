@@ -6,7 +6,6 @@
 #FROM openjdk:8-jdk-alpine
 FROM openjdk:11.0-jre
 
-
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/spring-boot-web.jar
 
